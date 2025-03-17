@@ -43,6 +43,11 @@
             margin-bottom: 10px;
             font-size: 1.2rem;
         }
+        .buttons-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
         a.video-link {
             display: inline-block;
             background-color: #e94b35;
@@ -51,10 +56,53 @@
             text-decoration: none;
             border-radius: 4px;
             transition: background-color 0.3s;
-            margin-top: 10px;
         }
         a.video-link:hover {
             background-color: #c73e2e;
+        }
+        button.share-button {
+            background-color: #4267B2;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        button.share-button:hover {
+            background-color: #365899;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 140px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -70px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
         }
         .footer {
             text-align: center;
@@ -74,89 +122,218 @@
     <div class="video-container">
         <div class="video-title">Lesson 1: Life: Is This it?</div>
         <p>An exploration of life's biggest questions and whether there's more to life than what we see.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pnhGaUyykzyKxcDg?e=Iy5p1c" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pnhGaUyykzyKxcDg?e=Iy5p1c" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pnhGaUyykzyKxcDg?e=Iy5p1c')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-1">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 2: Jesus: Who is He?</div>
         <p>Examining the historical figure of Jesus and why his life continues to impact the world today.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_poYBxWd90OwFLRow?e=BGKXpL" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_poYBxWd90OwFLRow?e=BGKXpL" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_poYBxWd90OwFLRow?e=BGKXpL')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-2">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 3: Cross: Why Did Jesus Die?</div>
         <p>Understanding the significance of Jesus' death and what it means for us today.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pptBMMY3WuRQSG0Q?e=FbqeEu" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pptBMMY3WuRQSG0Q?e=FbqeEu" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pptBMMY3WuRQSG0Q?e=FbqeEu')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-3">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 4: Faith: How Can I have Faith?</div>
         <p>Exploring what faith means and how it can be developed in everyday life.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pqEJUGLK2RsDs3Sw?e=Kx5Nu3" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pqEJUGLK2RsDs3Sw?e=Kx5Nu3" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pqEJUGLK2RsDs3Sw?e=Kx5Nu3')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-4">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 5: Prayer: Why and How do I Pray?</div>
         <p>Learning about prayer and discovering practical ways to incorporate it into daily life.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pr6_pMfIuraku3Ug?e=BdjZoM" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pr6_pMfIuraku3Ug?e=BdjZoM" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pr6_pMfIuraku3Ug?e=BdjZoM')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-5">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 6: Bible: Why and How Should I Read the Bible?</div>
         <p>Understanding the relevance of the Bible and approaches to reading it meaningfully.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pshPDBnQ5QIJjdpw?e=LRAxCn" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pshPDBnQ5QIJjdpw?e=LRAxCn" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pshPDBnQ5QIJjdpw?e=LRAxCn')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-6">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
-        <div class="video-title">Lesson 7: Guide: How does God Guide Us?</div>
+        <div class="video-title">Lesson 7: Follow: How does God Guide Us?</div>
         <p>Discovering how God provides guidance and direction in our lives.</p>
-        <a href="https://1drv.ms/v/c/d56500d96a5a0b7a/EWN757_hla5HhDwVijaJuwEBzg-HLFjTq8-ZyUM8kJb0cQ?e=oB67wz" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/c/d56500d96a5a0b7a/EWN757_hla5HhDwVijaJuwEBzg-HLFjTq8-ZyUM8kJb0cQ?e=oB67wz" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/c/d56500d96a5a0b7a/EWN757_hla5HhDwVijaJuwEBzg-HLFjTq8-ZyUM8kJb0cQ?e=oB67wz')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-7">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 8: Spirit: Who is the Holy Spirit and What Does He Do?</div>
         <p>Exploring the person and work of the Holy Spirit in the Christian faith.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_puutHDsE6Z4amhkw?e=quktHS" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_puutHDsE6Z4amhkw?e=quktHS" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_puutHDsE6Z4amhkw?e=quktHS')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-8">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 9: Fill How Can I Be Filled with the Holy Spirit?</div>
         <p>Understanding what it means to be filled with the Holy Spirit and how it affects our lives.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_ptdhF3HHJiMTkYMA?e=O4faxa" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_ptdhF3HHJiMTkYMA?e=O4faxa" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_ptdhF3HHJiMTkYMA?e=O4faxa')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-9">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 10: New Life: How Can I make the Most of the Rest of My Life?</div>
         <p>Discovering purpose and meaning for living a fulfilling life.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pwKSzRO5ecttiCJw?e=brnSsr" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pwKSzRO5ecttiCJw?e=brnSsr" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pwKSzRO5ecttiCJw?e=brnSsr')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-10">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 11: Evil: How Can I Resist Evil?</div>
         <p>Addressing the reality of evil and strategies for standing against it.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pvNRnxhY7Fh0BRIA?e=dMLD4P" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pvNRnxhY7Fh0BRIA?e=dMLD4P" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pvNRnxhY7Fh0BRIA?e=dMLD4P')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-11">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 12: Healing: Does God Heal Today?</div>
         <p>Exploring the concept of divine healing in contemporary life.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_py7j1Yx5h4V7AOxQ?e=AxpqVW" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_py7j1Yx5h4V7AOxQ?e=AxpqVW" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_py7j1Yx5h4V7AOxQ?e=AxpqVW')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-12">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 13: Telling Others: Why and How Should I Tell Others?</div>
         <p>Learning how to share faith experiences with others in a respectful way.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pxtTX5Y8M7YTPEUg?e=MeZPT0" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pxtTX5Y8M7YTPEUg?e=MeZPT0" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pxtTX5Y8M7YTPEUg?e=MeZPT0')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-13">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="video-container">
         <div class="video-title">Lesson 14: Church: What About the Church?</div>
         <p>Understanding the role and importance of church community in the Christian faith.</p>
-        <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pzfx3MzMyeiQu6Zw?e=Mk9bD1" class="video-link" target="_blank">Watch Video</a>
+        <div class="buttons-container">
+            <a href="https://1drv.ms/v/s!AnoLWmrZAGXVg_pzfx3MzMyeiQu6Zw?e=Mk9bD1" class="video-link" target="_blank">Watch Video</a>
+            <div class="tooltip">
+                <button class="share-button" onclick="copyToClipboard('https://1drv.ms/v/s!AnoLWmrZAGXVg_pzfx3MzMyeiQu6Zw?e=Mk9bD1')">Share Video</button>
+                <span class="tooltip-text" id="tooltip-14">Link copied!</span>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
-        <p>© Alpha Video Series. These videos are meant for the purpose of aiding in our facilitation and running of the Alpha Course.</p>
+        <p>© Alpha Video Series 25A. These videos are shared for educational purposes.</p>
     </div>
+
+    <script>
+        function copyToClipboard(text) {
+            // Create a temporary input element
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            
+            // Select the text
+            input.select();
+            input.setSelectionRange(0, 99999); // For mobile devices
+            
+            // Copy the text
+            document.execCommand('copy');
+            
+            // Remove the temporary element
+            document.body.removeChild(input);
+            
+            // Get the tooltip number from the text (hacky but works)
+            const lessonNum = text.includes("_pnhGaU") ? 1 : 
+                             text.includes("_poYBxW") ? 2 :
+                             text.includes("_pptBMM") ? 3 :
+                             text.includes("_pqEJUG") ? 4 :
+                             text.includes("_pr6_pM") ? 5 :
+                             text.includes("_pshPDB") ? 6 :
+                             text.includes("EWN757_") ? 7 :
+                             text.includes("_puutHD") ? 8 :
+                             text.includes("_ptdhF3") ? 9 :
+                             text.includes("_pwKSzR") ? 10 :
+                             text.includes("_pvNRnx") ? 11 :
+                             text.includes("_py7j1Y") ? 12 :
+                             text.includes("_pxtTX5") ? 13 : 14;
+            
+            // Show the tooltip
+            const tooltip = document.getElementById(`tooltip-${lessonNum}`);
+            tooltip.style.visibility = "visible";
+            tooltip.style.opacity = "1";
+            
+            // Hide the tooltip after 2 seconds
+            setTimeout(function() {
+                tooltip.style.visibility = "hidden";
+                tooltip.style.opacity = "0";
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
